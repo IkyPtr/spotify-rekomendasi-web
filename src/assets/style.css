@@ -1,0 +1,353 @@
+/* Landing Page */
+
+:root {
+    --header-bg: #143327;
+    --hero-bg: #0a1a12;
+    --hero-bg-2: #0c2018;
+    --accent-green: #2ecc71;
+    --accent-green-soft: #34c97a;
+    --tab-bg: #16302484;
+    --card-bg: #0e2119;
+    --card-border: #ffffff14;
+    --bubble-gray: #5c6b62;
+    --bubble-green: #1f6b47;
+    --text-white: #f4f7f5;
+    --text-gray: #a9b3ad;
+    --footer-bg: #dcdcdc;
+    --font-display: "Poppins", sans-serif;
+    --font-body: "Inter", sans-serif;
+    --font-serif: "Playfair Display", serif;
+    --font-script: "Caveat", cursive;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--hero-bg);
+    color: var(--text-white);
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent-green);
+    outline-offset: 3px;
+}
+
+.suarasa-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+    background: var(--header-bg);
+    padding: 22px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand-mark {
+    width: 46px;
+    height: 46px;
+    background: #ffffff;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.brand-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--text-white);
+    letter-spacing: 0.2px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #d8ded9;
+    transition: color 0.15s ease;
+}
+
+.main-nav a:hover {
+    color: var(--text-white);
+}
+
+.header-cta {
+    background: var(--accent-green);
+    color: #06170f;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 28px;
+    border-radius: 999px;
+    transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.header-cta:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+    flex: 1;
+    background:
+        radial-gradient(120% 90% at 100% 0%, var(--hero-bg-2) 0%, var(--hero-bg) 55%),
+        var(--hero-bg);
+    padding: 88px 64px 96px;
+    display: grid;
+    grid-template-columns: minmax(320px, 560px) minmax(320px, 700px);
+    gap: 48px;
+    align-items: center;
+}
+
+.hero-copy {
+    max-width: 560px;
+}
+
+.eyebrow {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-green);
+    margin-bottom: 22px;
+}
+
+.hero-heading {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 52px;
+    line-height: 1.16;
+    color: var(--text-white);
+    margin-bottom: 26px;
+}
+
+.hero-heading .line {
+    display: block;
+}
+
+.hero-heading .script {
+    font-family: var(--font-script);
+    font-weight: 700;
+    color: var(--accent-green);
+    font-size: 1.28em;
+    font-style: italic;
+    margin-right: 12px;
+    display: inline-block;
+    line-height: 1;
+    position: relative;
+    top: 4px;
+}
+
+.hero-paragraph {
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--text-gray);
+    max-width: 480px;
+    margin-bottom: 38px;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.cta-primary {
+    background: var(--accent-green);
+    color: #06170f;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 17px;
+    padding: 18px 34px;
+    border-radius: 999px;
+    transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.cta-primary:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+.cta-secondary {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-gray);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.cta-secondary:hover {
+    color: var(--text-white);
+    border-bottom-color: var(--text-white);
+}
+
+/* ---------- Chat mock card ---------- */
+
+.chat-panel {
+    position: relative;
+    padding-top: 34px;
+}
+
+.chat-tab {
+    position: relative;
+    z-index: 2;
+    background: #1a352a;
+    border: 1px solid var(--card-border);
+    border-bottom: none;
+    border-radius: 22px 22px 0 0;
+    padding: 18px 0 26px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    color: #c7d0cb;
+    letter-spacing: 0.3px;
+}
+
+.chat-card {
+    position: relative;
+    z-index: 1;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0 0 26px 26px;
+    padding: 30px 20px 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: -18px;
+    padding-top: 34px;
+}
+
+.bubble {
+    border-radius: 20px;
+    height: 86px;
+    width: 68%;
+}
+
+.bubble-gray {
+    background: var(--bubble-gray);
+    align-self: flex-start;
+}
+
+.bubble-green {
+    background: var(--bubble-green);
+    align-self: flex-end;
+    width: 76%;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+    background: var(--footer-bg);
+    padding: 22px 64px;
+}
+
+.footer-handle {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: #111;
+    letter-spacing: 0.3px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 980px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 56px 32px 64px;
+    }
+
+    .hero-copy {
+        max-width: 100%;
+    }
+
+    .hero-paragraph {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .site-header {
+        padding: 18px 24px;
+    }
+
+    .main-nav {
+        order: 3;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 22px;
+    }
+
+    .hero-heading {
+        font-size: 38px;
+    }
+
+    .hero-paragraph {
+        font-size: 16px;
+    }
+
+    .bubble {
+        width: 78%;
+        height: 70px;
+    }
+
+    .bubble-green {
+        width: 84%;
+    }
+
+    .site-footer {
+        padding: 18px 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
