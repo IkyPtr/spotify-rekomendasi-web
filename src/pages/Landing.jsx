@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import Reveal from "../components/Reveal.jsx";
+import SiteFooter from "../components/SiteFooter.jsx";
+import Typewriter from "../components/Typewriter.jsx";
 
 const PIPELINE = [
   {
@@ -96,9 +99,11 @@ const TEAM = [
   { name: "Randy Gustian", role: "Data & Evaluasi", github: null },
 ];
 
+const TYPE_WORDS = ["mood kamu", "aktivitasmu", "artis favorit", "lirik yang kamu ingat"];
+
 function Navbar() {
   return (
-    <header className="site-header">
+    <header className="site-header glass-nav">
       <Link to="/" className="brand">
         <div className="brand-mark" aria-hidden="true" />
         <span className="brand-name">Suarasa</span>
@@ -122,39 +127,60 @@ function Navbar() {
 function Hero() {
   return (
     <section className="hero" id="beranda">
-      <div className="hero-copy">
-        <div className="hero-logo-wrap">
-          <div className="hero-logo" aria-hidden="true">
-            🎵
-          </div>
-          <p className="eyebrow">AI Agent Rekomendasi Musik</p>
-        </div>
-
-        <h1 className="hero-heading">
-          <span className="line">Ngobrol dikit,</span>
-          <span className="line">
-            <span className="script">Playlist</span> auto pas.
-          </span>
-        </h1>
-
-        <p className="hero-paragraph">
-          <strong>Suarasa</strong> adalah AI Agent yang memahami suasana hati,
-          aktivitas, dan konteks kamu lewat percakapan — lalu mencocokkan ke
-          900 ribu+ lagu di database Spotify.
-        </p>
-
-        <div className="hero-actions">
-          <Link to="/chat" className="cta-primary">
-            Mulai Ngobrol →
-          </Link>
-          <a href="#tentang" className="cta-secondary">
-            Pelajari lebih lanjut
-          </a>
-        </div>
+      <div className="bg-orbs" aria-hidden="true">
+        <span className="orb orb-1" />
+        <span className="orb orb-2" />
+        <span className="orb orb-3" />
       </div>
 
-      <div className="hero-visual">
-        <div className="hero-visual-card">
+      <div className="hero-copy">
+        <Reveal>
+          <div className="hero-logo-wrap">
+            <div className="hero-logo glass-card" aria-hidden="true">
+              🎵
+            </div>
+            <p className="eyebrow">AI Agent Rekomendasi Musik</p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={100}>
+          <h1 className="hero-heading">
+            <span className="line">Ngobrol dikit,</span>
+            <span className="line">
+              <span className="script">Playlist</span> auto pas.
+            </span>
+          </h1>
+        </Reveal>
+
+        <Reveal delay={200}>
+          <p className="hero-typing">
+            Temukan lagu berdasarkan{" "}
+            <Typewriter words={TYPE_WORDS} className="typewriter-accent" />
+          </p>
+        </Reveal>
+
+        <Reveal delay={300}>
+          <p className="hero-paragraph">
+            <strong>Suarasa</strong> adalah AI Agent yang memahami suasana hati,
+            aktivitas, dan konteks kamu lewat percakapan — lalu mencocokkan ke
+            900 ribu+ lagu di database Spotify.
+          </p>
+        </Reveal>
+
+        <Reveal delay={400}>
+          <div className="hero-actions">
+            <Link to="/chat" className="cta-primary">
+              Mulai Ngobrol →
+            </Link>
+            <a href="#tentang" className="cta-secondary">
+              Pelajari lebih lanjut
+            </a>
+          </div>
+        </Reveal>
+      </div>
+
+      <Reveal className="hero-visual" delay={200}>
+        <div className="hero-visual-card glass-card float-card">
           <div className="hero-visual-icon">🤖</div>
           <h3>Suarasa AI Agent</h3>
           <p>Powered by RAG + NLP + Semantic Search</p>
@@ -162,7 +188,7 @@ function Hero() {
             Buka Chatbot
           </Link>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }
@@ -171,28 +197,32 @@ function Tentang() {
   return (
     <section className="section" id="tentang">
       <div className="section-inner">
-        <p className="section-eyebrow">Tentang AI Agent</p>
-        <h2 className="section-title">Dari query hingga rekomendasi lagu</h2>
-        <p className="section-desc">
-          Suarasa dibangun dengan pendekatan{" "}
-          <strong>Retrieval-Augmented Generation (RAG)</strong> dan{" "}
-          <strong>Natural Language Processing</strong>. Berikut alur lengkap
-          sistem dari awal hingga akhir:
-        </p>
+        <Reveal>
+          <p className="section-eyebrow">Tentang AI Agent</p>
+          <h2 className="section-title">Dari query hingga rekomendasi lagu</h2>
+          <p className="section-desc">
+            Suarasa dibangun dengan pendekatan{" "}
+            <strong>Retrieval-Augmented Generation (RAG)</strong> dan{" "}
+            <strong>Natural Language Processing</strong>. Berikut alur lengkap
+            sistem dari awal hingga akhir:
+          </p>
+        </Reveal>
 
         <div className="pipeline">
           {PIPELINE.map((item, i) => (
-            <article key={item.step} className="pipeline-item">
-              <div className="pipeline-marker">
-                <span className="pipeline-step">{item.step}</span>
-                {i < PIPELINE.length - 1 && <span className="pipeline-line" />}
-              </div>
-              <div className="pipeline-content">
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-                <span className="pipeline-tool">{item.tool}</span>
-              </div>
-            </article>
+            <Reveal key={item.step} delay={i * 60}>
+              <article className="pipeline-item">
+                <div className="pipeline-marker">
+                  <span className="pipeline-step">{item.step}</span>
+                  {i < PIPELINE.length - 1 && <span className="pipeline-line" />}
+                </div>
+                <div className="pipeline-content glass-card">
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                  <span className="pipeline-tool">{item.tool}</span>
+                </div>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -204,11 +234,24 @@ function Fitur() {
   return (
     <section className="section section-alt" id="fitur">
       <div className="section-inner">
-        <p className="section-eyebrow">Fitur</p>
-        <h2 className="section-title">Apa saja yang bisa Suarasa lakukan?</h2>
+        <Reveal>
+          <p className="section-eyebrow">Fitur</p>
+          <h2 className="section-title">Apa saja yang bisa Suarasa lakukan?</h2>
+          <p className="section-desc">
+            Suarasa mendukung berbagai cara menemukan musik — cukup ceritakan
+            kebutuhanmu dalam bahasa sehari-hari, sistem akan memahami dan
+            memberikan rekomendasi lagu yang relevan.
+          </p>
+        </Reveal>
         <ul className="feature-list">
-          {FEATURES.map((f) => (
-            <li key={f}>{f}</li>
+          {FEATURES.map((f, i) => (
+            <li
+              key={f}
+              className="glass-card feature-item"
+              style={{ animationDelay: `${i * 80}ms` }}
+            >
+              {f}
+            </li>
           ))}
         </ul>
       </div>
@@ -220,22 +263,28 @@ function CaraKerja() {
   return (
     <section className="section" id="cara-kerja">
       <div className="section-inner">
-        <p className="section-eyebrow">Cara Chatbox Bekerja</p>
-        <h2 className="section-title">Empat langkah mudah</h2>
+        <Reveal>
+          <p className="section-eyebrow">Cara Chatbox Bekerja</p>
+          <h2 className="section-title">Empat langkah mudah</h2>
+        </Reveal>
         <div className="steps steps--four">
-          {CHATBOX_STEPS.map((s) => (
-            <article key={s.num} className="step-card">
-              <span className="step-num">{s.num}</span>
-              <h3>{s.title}</h3>
-              <p>{s.desc}</p>
-            </article>
+          {CHATBOX_STEPS.map((s, i) => (
+            <Reveal key={s.num} delay={i * 80}>
+              <article className="step-card glass-card">
+                <span className="step-num">{s.num}</span>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+              </article>
+            </Reveal>
           ))}
         </div>
-        <div className="section-cta-wrap">
-          <Link to="/chat" className="cta-primary">
-            Coba Sekarang →
-          </Link>
-        </div>
+        <Reveal delay={200}>
+          <div className="section-cta-wrap">
+            <Link to="/chat" className="cta-primary">
+              Coba Sekarang →
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -245,18 +294,22 @@ function Tools() {
   return (
     <section className="section section-alt" id="tools">
       <div className="section-inner">
-        <p className="section-eyebrow">Tech Stack</p>
-        <h2 className="section-title">Tools yang kami gunakan</h2>
-        <p className="section-desc">
-          Sepuluh teknologi utama dalam pembuatan AI Agent Suarasa — dari
-          backend NLP hingga frontend dan deployment.
-        </p>
+        <Reveal>
+          <p className="section-eyebrow">Tech Stack</p>
+          <h2 className="section-title">Tools yang kami gunakan</h2>
+          <p className="section-desc">
+            Sepuluh teknologi utama dalam pembuatan AI Agent Suarasa — dari
+            backend NLP hingga frontend dan deployment.
+          </p>
+        </Reveal>
         <div className="tools-grid">
-          {TOOLS.map((t) => (
-            <article key={t.name} className="tool-card">
-              <img src={t.icon} alt="" className="tool-icon" loading="lazy" />
-              <span className="tool-name">{t.name}</span>
-            </article>
+          {TOOLS.map((t, i) => (
+            <Reveal key={t.name} delay={i * 40}>
+              <article className="tool-card glass-card">
+                <img src={t.icon} alt="" className="tool-icon" loading="lazy" />
+                <span className="tool-name">{t.name}</span>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -268,46 +321,39 @@ function Tim() {
   return (
     <section className="section" id="tim">
       <div className="section-inner">
-        <p className="section-eyebrow">Our Team</p>
-        <h2 className="section-title">Tim pengembang Suarasa</h2>
-        <p className="section-desc">
-          Proyek capstone mahasiswa Politeknik Caltex Riau — Jurusan Teknik
-          Informatika.
-        </p>
+        <Reveal>
+          <p className="section-eyebrow">Our Team</p>
+          <h2 className="section-title">Tim pengembang Suarasa</h2>
+          <p className="section-desc">
+            Proyek capstone mahasiswa Politeknik Caltex Riau — Jurusan Teknik
+            Informatika.
+          </p>
+        </Reveal>
         <div className="team-grid">
-          {TEAM.map((m) => (
-            <article key={m.name} className="team-card">
-              <div className="team-avatar" aria-hidden="true">
-                {m.name.charAt(0)}
-              </div>
-              <h3>{m.name}</h3>
-              <p className="team-role">{m.role}</p>
-              {m.github && (
-                <a
-                  className="team-link"
-                  href={`https://github.com/${m.github}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  @{m.github}
-                </a>
-              )}
-            </article>
+          {TEAM.map((m, i) => (
+            <Reveal key={m.name} delay={i * 80}>
+              <article className="team-card glass-card">
+                <div className="team-avatar" aria-hidden="true">
+                  {m.name.charAt(0)}
+                </div>
+                <h3>{m.name}</h3>
+                <p className="team-role">{m.role}</p>
+                {m.github && (
+                  <a
+                    className="team-link"
+                    href={`https://github.com/${m.github}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    @{m.github}
+                  </a>
+                )}
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>
     </section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="site-footer">
-      <span className="footer-handle">@SUARASA_23</span>
-      <span className="footer-copy">
-        Politeknik Caltex Riau &middot; 2026
-      </span>
-    </footer>
   );
 }
 
@@ -321,7 +367,7 @@ export default function Landing() {
       <CaraKerja />
       <Tools />
       <Tim />
-      <Footer />
+      <SiteFooter />
     </div>
   );
 }
