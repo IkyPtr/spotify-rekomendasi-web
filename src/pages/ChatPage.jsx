@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Chatbot from "../components/Chatbot.jsx";
-import SiteFooter from "../components/SiteFooter.jsx";
 import Typewriter from "../components/Typewriter.jsx";
 
 const TYPE_WORDS = ["mood", "artis", "aktivitas", "lirik"];
@@ -33,7 +32,6 @@ export default function ChatPage() {
       </header>
 
       <Chatbot />
-      <SiteFooter variant="chat" />
     </div>
   );
 }

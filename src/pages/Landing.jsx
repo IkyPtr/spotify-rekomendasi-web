@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal.jsx";
 import SiteFooter from "../components/SiteFooter.jsx";
 import Typewriter from "../components/Typewriter.jsx";
+import Watermark from "../components/Watermark.jsx";
 
 const PIPELINE = [
   {
@@ -360,6 +361,7 @@ function Tim() {
 export default function Landing() {
   return (
     <div className="landing-page">
+      <Watermark />
       <Navbar />
       <Hero />
       <Tentang />

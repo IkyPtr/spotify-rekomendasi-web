@@ -666,58 +666,123 @@ body.custom-cursor-active * {
 
 /* ---------- Footer ---------- */
 
+.landing-watermark {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.landing-watermark span {
+    font-family: var(--font-display);
+    font-size: clamp(120px, 22vw, 280px);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(46, 204, 113, 0.04);
+    text-stroke: 1px rgba(46, 204, 113, 0.04);
+    opacity: 0.6;
+    user-select: none;
+    transform: rotate(-12deg);
+}
+
+.site-header,
+.section,
+.site-footer {
+    position: relative;
+    z-index: 1;
+}
+
 .site-footer {
     background: var(--footer-bg);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 40px 64px 28px;
-    position: relative;
-    z-index: 1;
+    padding: 48px 64px 0;
+    margin-top: auto;
 }
 
 .footer-inner {
     max-width: 1100px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    gap: 24px;
+    grid-template-columns: 1.2fr 1fr 1.2fr;
+    gap: 40px;
+    padding-bottom: 36px;
 }
 
-.footer-brand {
+.footer-col h4 {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-green);
+    margin-bottom: 16px;
+}
+
+.footer-brand-link {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
+    margin-bottom: 20px;
 }
 
-.footer-logo {
-    font-size: 28px;
+.footer-logo-mark {
     width: 48px;
     height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
+    background: #ffffff;
     border-radius: 12px;
+    flex-shrink: 0;
 }
 
-.footer-brand strong {
+.footer-brand-link strong {
     display: block;
     font-family: var(--font-display);
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: 700;
     color: var(--text-white);
 }
 
-.footer-brand p {
-    font-size: 12px;
+.footer-brand-link p {
+    font-size: 13px;
     color: var(--text-gray);
     margin-top: 2px;
 }
 
-.footer-nav {
+.footer-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-gray);
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.footer-github:hover {
+    border-color: rgba(46, 204, 113, 0.4);
+    color: var(--text-white);
+}
+
+.footer-github-icon {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+}
+
+.footer-nav ul {
+    list-style: none;
     display: flex;
-    gap: 28px;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .footer-nav a {
@@ -730,50 +795,32 @@ body.custom-cursor-active * {
     color: var(--accent-green);
 }
 
-.footer-meta {
-    text-align: right;
+.footer-address address {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--text-gray);
 }
 
-.footer-handle {
-    display: block;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 15px;
-    color: var(--accent-green);
-    letter-spacing: 0.3px;
-    margin-bottom: 4px;
-}
-
-.footer-copy {
+.footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
     font-size: 13px;
     color: var(--text-gray);
 }
 
-.site-footer--chat {
-    flex-shrink: 0;
-    padding: 20px 24px;
-}
-
-.site-footer--chat .footer-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 16px;
-}
-
-.site-footer--chat .footer-brand,
-.site-footer--chat .footer-nav,
-.site-footer--chat .footer-meta {
-    justify-content: center;
-    text-align: center;
-}
-
-.site-footer--chat .footer-nav {
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.site-footer--chat .footer-brand {
-    justify-content: center;
+.footer-handle {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--accent-green);
+    letter-spacing: 0.3px;
 }
 
 /* ---------- Sections ---------- */
@@ -967,28 +1014,17 @@ body.custom-cursor-active * {
     }
 
     .site-footer {
-        padding: 32px 24px;
+        padding: 36px 24px 0;
     }
 
     .footer-inner {
         grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
         text-align: center;
-    }
-
-    .footer-brand,
-    .footer-nav,
-    .footer-meta {
-        justify-content: center;
-        text-align: center;
-    }
-
-    .footer-nav {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .footer-brand {
-        justify-content: center;
     }
 
     .section {
