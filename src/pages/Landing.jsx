@@ -86,7 +86,7 @@ const TOOLS = [
   { name: "FastAPI", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
   { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
   { name: "Vite", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" },
-  { name: "FAISS", icon: "https://upload.wikimedia.org/wikipedia/commons/7/78/Artificial_neural_network.svg" },
+  { name: "FAISS", icon: "https://tse1.mm.bing.net/th/id/OIP.5MoH8qTW_swxJ-jDBlOd8QHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" },
   { name: "HuggingFace", icon: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg" },
   { name: "Pandas", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" },
   { name: "Spotify", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spotify.svg" },
@@ -95,9 +95,9 @@ const TOOLS = [
 ];
 
 const TEAM = [
-  { name: "Rezki Saputra", role: "Backend & NLP", github: "IkyPtr" },
+  { name: "Rezki Saputra", role: "Data, Evaluasi, Backend & NLP", github: "IkyPtr" },
   { name: "Mohd. Arifin Ramadhan", role: "Frontend", github: "ArifinRamadhan" },
-  { name: "Randy Gustian", role: "Data & Evaluasi", github: null },
+  { name: "Randy Gustian", role: "Web Designer ", github: "RandyGuatian" },
 ];
 
 const TYPE_WORDS = ["mood kamu", "aktivitasmu", "artis favorit", "lirik yang kamu ingat"];

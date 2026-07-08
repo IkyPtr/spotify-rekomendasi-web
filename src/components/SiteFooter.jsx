@@ -54,9 +54,7 @@ export default function SiteFooter() {
           <address>
             Politeknik Caltex Riau
             <br />
-            Jl. Negeri Para Pak-Pak, Sukajadi
-            <br />
-            Pekanbaru, Riau 28288
+            Jl. Umban Sari No.1, Umban Sari, Kec. Rumbai, Kota Pekanbaru, Riau 28266, Indonesia.
           </address>
         </div>
       </div>
