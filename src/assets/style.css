@@ -752,6 +752,12 @@ body.custom-cursor-active * {
     margin-top: 2px;
 }
 
+.footer-brand-icon {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
 .footer-github {
     display: inline-flex;
     align-items: center;

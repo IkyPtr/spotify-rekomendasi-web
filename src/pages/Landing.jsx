@@ -86,7 +86,7 @@ const TOOLS = [
   { name: "FastAPI", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
   { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
   { name: "Vite", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" },
-  { name: "FAISS", icon: "https://upload.wikimedia.org/wikipedia/commons/7/78/Artificial_neural_network.svg" },
+  { name: "FAISS", icon: "https://raw.githubusercontent.com/deepset-ai/haystack-integrations/main/logos/meta.png" },
   { name: "HuggingFace", icon: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg" },
   { name: "Pandas", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" },
   { name: "Spotify", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spotify.svg" },
@@ -106,7 +106,11 @@ function Navbar() {
   return (
     <header className="site-header glass-nav">
       <Link to="/" className="brand">
-        <div className="brand-mark" aria-hidden="true" />
+        <img
+          src="public\images\suarasaicon.png"
+          alt="Suarasa"
+          className="footer-brand-icon"
+        />
         <span className="brand-name">Suarasa</span>
       </Link>
 

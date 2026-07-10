@@ -16,7 +16,11 @@ export default function SiteFooter() {
       <div className="footer-inner">
         <div className="footer-col footer-brand">
           <Link to="/" className="footer-brand-link">
-            <div className="footer-logo-mark" aria-hidden="true" />
+            <img 
+              src="public\images\suarasaicon.png" 
+              alt="Suarasa"
+              className="footer-brand-icon"
+            />
             <div>
               <strong>Suarasa</strong>
               <p>AI Agent Rekomendasi Musik</p>
@@ -54,9 +58,9 @@ export default function SiteFooter() {
           <address>
             Politeknik Caltex Riau
             <br />
-            Jl. Negeri Para Pak-Pak, Sukajadi
+            Jl. Umban Sari No.1, Kec. Rumbai
             <br />
-            Pekanbaru, Riau 28288
+            Pekanbaru, Riau 28265
           </address>
         </div>
       </div>
