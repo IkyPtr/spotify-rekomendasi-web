@@ -95,9 +95,9 @@ const TOOLS = [
 ];
 
 const TEAM = [
-  { name: "Rezki Saputra", role: "Backend & NLP", github: "IkyPtr" },
+  { name: "Rezki Saputra", role: "Data, Evaluasi, Backend & NLP", github: "IkyPtr" },
   { name: "Mohd. Arifin Ramadhan", role: "Frontend", github: "ArifinRamadhan" },
-  { name: "Randy Gustian", role: "Data & Evaluasi", github: null },
+  { name: "Randy Gustian", role: "Web Designer ", github: "RandyGuatian" },
 ];
 
 const TYPE_WORDS = ["mood kamu", "aktivitasmu", "artis favorit", "lirik yang kamu ingat"];
